@@ -38,6 +38,18 @@ public class LambdaSamples {
 		return object;
 	}
 
+	public Object fromStringToLambda2(final String function, final String value) throws ScriptException {
+		
+		/*final List<Integer> list = new ArrayList<>();
+	    list.addAll(Arrays.asList(1, 2, 3, 4, 5));
+
+	    final LambdaFactory lambdaFactory = LambdaFactory.get();
+	    final Function<Integer, Integer> lambda = lambdaFactory
+	            .createLambda("x -> x + 1", new TypeReference<Function<Integer, Integer>>() {});
+	    list.stream().map(lambda).forEach(System.out::println); //prints 2 to 6*/
+		return null;
+	}
+	
 	public static void main(final String[] args) throws ScriptException {
 
 		LambdaSamples.test();
