@@ -2,6 +2,8 @@ package fr.omathe.web;
 
 import java.util.Enumeration;
 
+import javax.servlet.http.HttpServletRequest;
+
 public class Http {
 
 	public static void printRequestHeaders(final HttpServletRequest request) {
