@@ -21,6 +21,11 @@ public class FileSamples {
 		return Files.walk(Paths.get(directory));
 	}
 
+	/**
+	 * Returns the bytes of a file
+	 * @param file - The file
+	 * @return An array of bytes
+	 */
 	byte[] getFileBytes(final File file) {
 
 		final Path path = file.toPath();
@@ -30,6 +35,19 @@ public class FileSamples {
 		} catch (final IOException e) {
 		}
 		return content;
+	}
+	
+	/**
+	 * Creates a file on the root of the class path
+	 * @throws IOException 
+	 */
+	void createFileInClassPath() throws IOException {
+		
+		final String basePathOfClass = FileSamples.class.getProtectionDomain().getCodeSource().getLocation().getFile();
+		final File file = new File(basePathOfClass + "toto.txt");
+		if (!file.exists()) {
+			file.createNewFile();
+		}
 	}
 
 }
