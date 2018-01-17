@@ -36,13 +36,13 @@ public class FileSamples {
 		}
 		return content;
 	}
-	
+
 	/**
 	 * Creates a file on the root of the class path
-	 * @throws IOException 
+	 * @throws IOException
 	 */
-	void createFileInClassPath() throws IOException {
-		
+	void createFileOnClassPath() throws IOException {
+
 		final String basePathOfClass = FileSamples.class.getProtectionDomain().getCodeSource().getLocation().getFile();
 		final File file = new File(basePathOfClass + "toto.txt");
 		if (!file.exists()) {
