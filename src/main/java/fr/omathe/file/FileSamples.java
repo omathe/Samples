@@ -1,7 +1,10 @@
 package fr.omathe.file;
 
 import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.io.InputStream;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
@@ -10,9 +13,10 @@ import java.util.stream.Stream;
 public class FileSamples {
 
 	/**
-	 * Browses a files tree
-	 * The root file is included in the returned stream
-	 * @param directory - The root directory
+	 * Browses a files tree The root file is included in the returned stream
+	 *
+	 * @param directory
+	 *            - The root directory
 	 * @return A stream of Path
 	 * @throws IOException
 	 */
@@ -39,7 +43,6 @@ public class FileSamples {
 
 	/**
 	 * Creates a file on the root of the class path
-	 * @throws IOException
 	 */
 	void createFileOnClassPath() throws IOException {
 
@@ -48,6 +51,14 @@ public class FileSamples {
 		if (!file.exists()) {
 			file.createNewFile();
 		}
+	}
+
+	/**
+	 * Get InputStream from a file
+	 */
+	InputStream getInputStreamFromFile(File file) throws FileNotFoundException {
+
+		return new FileInputStream(file);
 	}
 
 }
