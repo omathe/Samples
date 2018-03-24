@@ -15,11 +15,6 @@ public interface CastingSamples {
 		}
 	}
 
-	static <T> List<T> filter(Class<T> clazz, List<?> items) {
-
-		return items.stream().filter(clazz::isInstance).map(clazz::cast).collect(Collectors.toList());
-	}
-
 	/**
 	 * Cast object to target
 	 */
@@ -30,6 +25,11 @@ public interface CastingSamples {
 			t = target.cast(object);
 		}
 		return t;
+	}
+
+	static <T> List<T> filter(Class<T> clazz, List<?> items) {
+
+		return items.stream().filter(clazz::isInstance).map(clazz::cast).collect(Collectors.toList());
 	}
 
 	@SuppressWarnings("unchecked")
